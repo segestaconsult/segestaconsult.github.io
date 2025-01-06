@@ -3,10 +3,10 @@ const UserManager = window.Oidc.UserManager;
 
 // OpenID Connect configuration
 const oidcSettings = {
-  authority: "https://oauth.id.jumpcloud.com/oauth2/auth", // Replace with your OpenID Provider URL
-  client_id: "2481f242-a06f-4782-9b56-dfeaa69bfa8b",
+  authority: "https://YOUR_AUTHORITY_URL", // Replace with your OpenID Provider URL
+  client_id: "YOUR_CLIENT_ID",
   redirect_uri: window.location.origin + "/success.html",
-  response_type: "id_token token",
+  response_type: "code", // Use Authorization Code flow
   scope: "openid profile email",
   post_logout_redirect_uri: window.location.origin + "/index.html",
 };
