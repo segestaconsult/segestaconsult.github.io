@@ -13,6 +13,9 @@
             "openid-connect"
         ],
         "noDirectLaunch": [],
-        "configs": {}
+        "configs": {
+            "agama.pw": {}
+        },
+        "name": "test IDP"
     }
 }
