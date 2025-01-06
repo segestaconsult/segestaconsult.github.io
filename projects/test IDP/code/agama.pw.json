@@ -1,0 +1,36 @@
+{
+  "nodes": [
+    {
+      "id": "startNode-ae2d190d-dc0c-4311-a52f-6bcaaf5fa112",
+      "type": "startNode",
+      "sourcePosition": "right",
+      "position": {
+        "x": 30,
+        "y": 30
+      },
+      "deletable": false,
+      "data": {
+        "id": "startNode-ae2d190d-dc0c-4311-a52f-6bcaaf5fa112",
+        "type": "startNode",
+        "position": {
+          "x": 30,
+          "y": 40
+        },
+        "agamaData": {
+          "isTopLevelFlow": true,
+          "basepath": "",
+          "configParams": "{}",
+          "nodeIcon": "material-symbols:line-start-square",
+          "timeout": "",
+          "inputs": "",
+          "configs": "",
+          "flowname": "agama.pw",
+          "displayName": "agama password",
+          "creationDate": "06/01/2025",
+          "hasComment": true,
+          "comment": ""
+        }
+      }
+    }
+  ]
+}
