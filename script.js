@@ -1,3 +1,7 @@
+// Ensure we reference the correct global from the library
+const UserManager = window.Oidc.UserManager;
+
+// OpenID Connect configuration
 const oidcSettings = {
   authority: "https://oauth.id.jumpcloud.com/oauth2/auth", // Replace with your OpenID Provider URL
   client_id: "2481f242-a06f-4782-9b56-dfeaa69bfa8b",
@@ -7,7 +11,7 @@ const oidcSettings = {
   post_logout_redirect_uri: window.location.origin + "/index.html",
 };
 
-const userManager = new oidc.UserManager(oidcSettings);
+const userManager = new UserManager(oidcSettings);
 
 // Login function
 if (document.getElementById("loginButton")) {
