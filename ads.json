@@ -1,1 +1,18 @@
-{}
+{
+    "test IDP": {
+        "projectName": "test IDP",
+        "description": "Genesys CLoud authenticated webmessaging",
+        "type": "community",
+        "author": "segestaconsult",
+        "version": "0.0.1",
+        "authorWebsite": "https://github.com/segestaconsult/segestaconsult.github.io",
+        "githubUri": "https://github.com/segestaconsult/segestaconsult.github.io",
+        "license": "apache-2.0",
+        "lastUpdated": "1736172121241",
+        "tags": [
+            "openid-connect"
+        ],
+        "noDirectLaunch": [],
+        "configs": {}
+    }
+}
