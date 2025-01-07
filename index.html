@@ -3,187 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Argenta Bank Mockup</title>
-    <script type="text/javascript" charset="utf-8">
-  (function (g, e, n, es, ys) {
-    g['_genesysJs'] = e;
-    g[e] = g[e] || function () {
-      (g[e].q = g[e].q || []).push(arguments)
-    };
-    g[e].t = 1 * new Date();
-    g[e].c = es;
-    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
-  })(window, 'Genesys', 'https://apps.mypurecloud.de/genesys-bootstrap/genesys.min.js', {
-    environment: 'prod-euc1',
-    deploymentId: '533952c5-c400-4021-8bdb-7e7dd6d4b01b'
-  });
-</script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-
-        header {
-            background-color: #0a6b32;
-            color: white;
-            padding: 1rem 2rem;
-            text-align: center;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            background-color: #0a6b32;
-            padding: 1rem 0;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 3rem 2rem;
-            background: linear-gradient(to bottom, #0a6b32, #064923);
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-        }
-
-        .features {
-            display: flex;
-            justify-content: space-around;
-            padding: 2rem;
-            background-color: #ffffff;
-        }
-
-        .feature {
-            width: 30%;
-            background-color: #e6e6e6;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .feature h3 {
-            color: #0a6b32;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #0a6b32;
-            color: white;
-        }
-
-        .contact-form {
-            padding: 2rem;
-            background-color: #ffffff;
-            max-width: 600px;
-            margin: 2rem auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-form h3 {
-            text-align: center;
-            color: #0a6b32;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-form label {
-            display: block;
-            margin: 0.5rem 0;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .contact-form button {
-            display: block;
-            width: 100%;
-            padding: 0.75rem;
-            background-color: #0a6b32;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        .contact-form button:hover {
-            background-color: #064923;
-        }
-    </style>
+    <title>Okta SSO Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/okta-auth-js/7.3.1/okta-auth-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Argenta Bank Mockup</h1>
-    </header>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#features">Features</a>
-        <a href="login.html">Login</a>
-    </nav>
-    <div class="hero">
-        <h1>Welcome to Argenta Bank</h1>
-        <p>Empowering your financial future with secure and innovative banking solutions.</p>
+    <div id="app">
+        <h1>Welcome to Okta SSO Example</h1>
+        <div id="login-section">
+            <button id="login-btn">Login</button>
+        </div>
+        <div id="user-info" style="display: none;">
+            <h2>User Information</h2>
+            <p><strong>Name:</strong> <span id="user-name"></span></p>
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+            <button id="logout-btn">Logout</button>
+        </div>
     </div>
-    <section id="features" class="features">
-        <div class="feature">
-            <h3>Secure Accounts</h3>
-            <p>Your safety is our priority with cutting-edge security measures.</p>
-        </div>
-        <div class="feature">
-            <h3>24/7 Customer Support</h3>
-            <p>Dedicated support available anytime to assist you with your banking needs.</p>
-        </div>
-        <div class="feature">
-            <h3>Personalized Solutions</h3>
-            <p>Custom-tailored banking solutions designed to meet your financial goals.</p>
-        </div>
-    </section>
-    <section id="contact">
-        <div class="contact-form">
-            <h3>Contact Argenta Bank</h3>
-            <form>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </section>
-    <footer>
-        <p>&copy; 2025 Argenta Bank. All rights reserved.</p>
-    </footer>
+    <script src="app.js"></script>
 </body>
 </html>
