@@ -7,19 +7,19 @@
     <script src="https://global.oktacdn.com/okta-auth-js/7.3.1/okta-auth-js.min.js"></script>
 </head>
 <body>
+    <h1>Processing Login...</h1>
     <script>
-        // Create an OktaAuth instance
+        // Configure Okta Auth
         const oktaAuth = new OktaAuth({
-            clientId: 'YOUR_CLIENT_ID', // Replace with your Okta Client ID
-            issuer: 'https://YOUR_OKTA_DOMAIN/oauth2/default', // Replace with your Okta Issuer URL
+            clientId: '0oamegaffqBBErZsU5d7', // Replace with your Okta Client ID
+            issuer: 'https://dev-86025507.okta.com/oauth2/default', // Replace with your Okta Domain
             redirectUri: window.location.origin + '/callback.html',
         });
 
-        // Parse the tokens from the URL after redirection
+        // Process the tokens from Okta
         oktaAuth.token.parseFromUrl()
-            .then(function (tokens) {
-                // Save the tokens to the Token Manager
-                tokens.forEach(function (token) {
+            .then(tokens => {
+                tokens.forEach(token => {
                     if (token.idToken) {
                         oktaAuth.tokenManager.add('idToken', token);
                     }
@@ -28,12 +28,12 @@
                     }
                 });
 
-                // Redirect back to the main page
+                // Redirect to the main app
                 window.location.replace('/');
             })
-            .catch(function (err) {
-                console.error('Error handling callback:', err);
-                alert('Authentication failed! Check the console for more details.');
+            .catch(err => {
+                console.error('Error processing callback:', err);
+                alert('Login failed. Check console for details.');
             });
     </script>
 </body>
