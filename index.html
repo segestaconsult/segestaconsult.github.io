@@ -213,6 +213,8 @@
 		// defaults
 		var sDeploymentId = '';
 		var sEnvironment = '';
+		window.localStorage.setItem('genesys_deployment_id', '533952c5-c400-4021-8bdb-7e7dd6d4b01b');
+		window.localStorage.setItem('genesys_environment', 'euc1');
 
 		if (window.localStorage.getItem('genesys_deployment_id')) {
 			document.getElementById('enter_deploymentId').value = window.localStorage.getItem('genesys_deployment_id');
