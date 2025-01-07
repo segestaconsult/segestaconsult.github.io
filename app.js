@@ -1,7 +1,7 @@
 const oktaAuth = new OktaAuth({
     clientId: '0oamegaffqBBErZsU5d7', // Replace with your Okta Client ID
     issuer: 'https://dev-86025507.okta.com/oauth2/default', // Replace with your Okta Issuer URL
-    redirectUri: window.location.origin,
+    redirectUri: window.location.origin + '/index.html',
     scopes: ['openid', 'profile', 'email'],
 });
 
