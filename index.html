@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Okta SSO Example</title>
+    <title>Okta SPA</title>
     <link rel="stylesheet" href="styles.css">
-
     <!-- Okta Auth JS -->
     <script src="https://global.oktacdn.com/okta-auth-js/7.3.1/okta-auth-js.min.js"></script>
 </head>
 <body>
     <div id="app">
-        <h1>Welcome to Okta SSO</h1>
+        <h1>Welcome to the Okta SPA</h1>
         <div id="login-section">
             <button id="login-btn">Login</button>
         </div>
@@ -22,61 +21,6 @@
             <button id="logout-btn">Logout</button>
         </div>
     </div>
-
-    <script>
-        // Configure Okta Auth
-        const oktaAuth = new OktaAuth({
-            clientId: '0oamegaffqBBErZsU5d7', // Replace with your Okta Client ID
-            issuer: 'https://dev-86025507.okta.com/oauth2/default', // Replace with your Okta Domain
-            redirectUri: window.location.origin + '/callback.html',
-            scopes: ['openid', 'profile', 'email'],
-        });
-
-        // DOM Elements
-        const loginBtn = document.getElementById('login-btn');
-        const logoutBtn = document.getElementById('logout-btn');
-        const userInfoSection = document.getElementById('user-info');
-        const loginSection = document.getElementById('login-section');
-        const userNameSpan = document.getElementById('user-name');
-        const userEmailSpan = document.getElementById('user-email');
-
-        // Show Login Section
-        function showLogin() {
-            userInfoSection.style.display = 'none';
-            loginSection.style.display = 'block';
-        }
-
-        // Show User Info Section
-        function showUserInfo(user) {
-            userNameSpan.textContent = user.name;
-            userEmailSpan.textContent = user.email;
-            userInfoSection.style.display = 'block';
-            loginSection.style.display = 'none';
-        }
-
-        // Check if the user is authenticated
-        async function checkAuthentication() {
-            const token = await oktaAuth.tokenManager.get('idToken');
-            if (token) {
-                showUserInfo(token.claims);
-            } else {
-                showLogin();
-            }
-        }
-
-        // Login button click handler
-        loginBtn.addEventListener('click', async () => {
-            await oktaAuth.signInWithRedirect();
-        });
-
-        // Logout button click handler
-        logoutBtn.addEventListener('click', async () => {
-            await oktaAuth.signOut();
-            showLogin();
-        });
-
-        // On Page Load
-        checkAuthentication();
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
